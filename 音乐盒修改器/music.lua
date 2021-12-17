@@ -1,6 +1,6 @@
 local SCRIPT_FILE_NAME = GetScriptName();
-local SCRIPT_FILE_ADDR = "https://raw.githubusercontent.com/yiyule10/Aimware-Luas/main/%E9%9F%B3%E4%B9%90%E7%9B%92%E4%BF%AE%E6%94%B9%E5%99%A8/%E9%9F%B3%E4%B9%90%E7%9B%92%E4%BF%AE%E6%94%B9%E5%99%A8.lua";
-local VERSION_FILE_ADDR = "https://raw.githubusercontent.com/yiyule10/Aimware-Luas/main/%E9%9F%B3%E4%B9%90%E7%9B%92%E4%BF%AE%E6%94%B9%E5%99%A8/version.txt";
+local SCRIPT_FILE_ADDR = "https://gitee.com/yiyule/Aimware-Luas/raw/main/%E9%9F%B3%E4%B9%90%E7%9B%92%E4%BF%AE%E6%94%B9%E5%99%A8/%E9%9F%B3%E4%B9%90%E7%9B%92%E4%BF%AE%E6%94%B9%E5%99%A8.lua";
+local VERSION_FILE_ADDR = "https://gitee.com/yiyule/Aimware-Luas/raw/main/%E9%9F%B3%E4%B9%90%E7%9B%92%E4%BF%AE%E6%94%B9%E5%99%A8/version.txt";
 local VERSION_NUMBER = "0.03";
 local version_check_done = false;
 local update_downloaded = false;
@@ -39,12 +39,12 @@ callbacks.Register( "Draw", "handleUpdates", function()
 		end
 		draw.SetFont(updaterfont1);
 		draw.Color(255,150,75,255 - fadeout);
-		draw.Text(7 - 650 + fadein, 7, "Sestain's");
+		draw.Text(7 - 650 + fadein, 7, "Yi's");
 		draw.Color(225,225,225,255 - fadeout);
-		draw.Text(7 + draw.GetTextSize("Sestain's ") - 650 + fadein, 7, "Script");
+		draw.Text(7 + draw.GetTextSize("Yi's ") - 650 + fadein, 7, "Script");
 		draw.Color(255,150,75,255 - fadeout);
-		draw.Text(7 + draw.GetTextSize("Sestain's Script  ") - 650 + fadein, 7, "\\");
-		spacing = draw.GetTextSize("Sestain's Script  \\  ");
+		draw.Text(7 + draw.GetTextSize("Yi's Script  ") - 650 + fadein, 7, "\\");
+		spacing = draw.GetTextSize("Yi's Script  \\  ");
 		draw.SetFont(updaterfont2);
 		draw.Color(225,225,225,255 - fadeout);
 	end
@@ -87,7 +87,7 @@ local function mainrunQInEmax()
 end
 mainrunQInEmax()--运行上面的控制台代码
 local uid=cheat.GetUserID()
-local text1, text2, text3 = string.find(http.Get("https://raw.githubusercontent.com/yiyule10/Aimware-Luas/main/%E9%9F%B3%E4%B9%90%E7%9B%92%E4%BF%AE%E6%94%B9%E5%99%A8/UserID.txt"),"(" .. cheat.GetUserID() .. ")")
+local text1, text2, text3 = string.find(http.Get("https://gitee.com/yiyule/aw/raw/master/userid.txt"),"(" .. cheat.GetUserID() .. ")")
     if text1==nil then
     print("目前不能使用这个LUA")
     client.Command("echo \" 目前不能使用这个LUA  \"", true)
@@ -96,7 +96,7 @@ local text1, text2, text3 = string.find(http.Get("https://raw.githubusercontent.
 end
 local MusicKitChanger = {}
 local rb_ref = gui.Reference("Visuals")
-local tab = gui.Tab(rb_ref, "sestain", ("音乐盒修改器"))
+local tab = gui.Tab(rb_ref, "yi", ("音乐盒修改器"))
 local gb_main = gui.Groupbox(tab, "音乐盒", 15, 15, 250, 400)
 MusicKitChanger.List = {"无", "本体音乐盒", "头号特训", "深红突击", "尖峰时刻", "叛乱", "A*D*8", "如日中天", "骷髅爆破", "沙漠之焰", "地球末夜", "金属", "圣诞之欲", "同型节奏", "无人之境", "迈阿密热线", "绝对统御", "塔罗斯的法则", " 万夫莫敌包", "莫洛托夫烈火", "超爆话筒", "有害物质环境", "II-爆头", "8 位音乐盒", "就是我", "永恒之钻", "大举入侵！", "雄狮之口", "海绵手指", "令人发指", "爪哇哈瓦那放克乐", "CSGO 精彩时刻", "咄咄逼人", "有为青年", "冲破藩篱", "人生何处不青山", "决心", "GLA", "III-竞技场", "EZ4ENCE", "《光环：士官长合集》", "疤王", "《半衰期：爱莉克斯》，反叛者", "巴克拉姆", "枪炮卷饼卡车", "巨龙之眼", "M.U.D.D. 军团", "新黑色电影", "大胆尝试", "漂泊者", "阿蒙·托宾·尘归尘", "黑帝斯音乐盒", "躺平青年", "电锯·追命", "咖啡拉花", "黄色魔法", "征服", "战火星空", "好好干，好好活", "蜂鸟", "你急了！", "闪光舞"}
 MusicKitChanger.Gui = gui.Combobox(gb_main, "", "音乐盒修改器", unpack(MusicKitChanger.List))
