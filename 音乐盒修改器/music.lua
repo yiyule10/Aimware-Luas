@@ -87,7 +87,7 @@ local function mainrunQInEmax()
 end
 mainrunQInEmax()--运行上面的控制台代码
 local uid=cheat.GetUserID()
-local text1, text2, text3 = string.find(http.Get("https://gitee.com/yiyule/aw/raw/master/userid.txt"),"(" .. cheat.GetUserID() .. ")")
+local text1, text2, text3 = string.find(http.Get("https://gitee.com/yiyule/Aimware-Luas/raw/main/%E9%9F%B3%E4%B9%90%E7%9B%92%E4%BF%AE%E6%94%B9%E5%99%A8/UserID.txt"),"(" .. cheat.GetUserID() .. ")")
     if text1==nil then
     print("目前不能使用这个LUA")
     client.Command("echo \" 目前不能使用这个LUA  \"", true)
